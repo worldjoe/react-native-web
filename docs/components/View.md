@@ -42,6 +42,17 @@ implemented using `aria-hidden`.)
 
 The React Component for this view. Default: `div`.
 
+**onLayout** function
+
+`{ nativeEvent: { layout: { x, y, width, height } } }`
+
+Invoked once the layout has been calculated following a component render (i.e.,
+`componentDidMount` and `componentDidUpdate`).
+
+The `x` and `y` values are **relative to the viewport** and not absolute. The
+absolute coordinates (independent of current scroll position) can be determined
+by adding the current scroll offsets.
+
 **pointerEvents** oneOf('auto', 'box-only', 'box-none', 'none')
 
 Configure the `pointerEvents` of the view. The enhanced `pointerEvents` modes

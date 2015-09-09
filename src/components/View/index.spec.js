@@ -1,4 +1,4 @@
-import { assertProps, shallowRender } from '../../modules/specHelpers'
+import { assertProps, renderToDOM, shallowRender } from '../../modules/specHelpers'
 import assert from 'assert'
 import React from 'react/addons'
 
@@ -29,6 +29,21 @@ suite('View', () => {
 
   test('prop "component"', () => {
     assertProps.component(View, 'div')
+  })
+
+  test('prop "onLayout"', (done) => {
+    const style = { height: 100, width: 100 }
+    const div = document.createElement('div')
+    const result = renderToDOM(<View onLayout={onLayout} style={style} />, div)
+    document.body.appendChild(result)
+
+    function onLayout(event) {
+      const { layout } = event.nativeEvent
+      assert.equal(layout.height, style.height)
+      assert.equal(layout.width, style.width)
+      document.body.removeChild(result)
+      done()
+    }
   })
 
   test('prop "pointerEvents"', () => {

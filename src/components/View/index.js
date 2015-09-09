@@ -1,3 +1,4 @@
+/* global window */
 import { pickProps } from '../../modules/filterObjectProps'
 import CoreComponent from '../CoreComponent'
 import React, { PropTypes } from 'react'
@@ -36,6 +37,7 @@ class View extends React.Component {
     accessible: PropTypes.bool,
     children: PropTypes.any,
     component: CoreComponent.propTypes.component,
+    onLayout: PropTypes.func,
     pointerEvents: PropTypes.oneOf(['auto', 'box-none', 'box-only', 'none']),
     style: PropTypes.shape(ViewStylePropTypes),
     testID: CoreComponent.propTypes.testID
@@ -47,6 +49,38 @@ class View extends React.Component {
     accessible: true,
     component: 'div',
     style: styles.initial
+  }
+
+  _onLayout() {
+    const node = React.findDOMNode(this)
+    const onLayout = this.props.onLayout
+
+    function dispatchLayoutEvent() {
+      const { height, left, top, width } = node.getBoundingClientRect()
+      const event = {
+        nativeEvent: {
+          layout: {
+            height,
+            width,
+            x: left,
+            y: top
+          }
+        }
+      }
+      onLayout(event)
+    }
+
+    if (onLayout) {
+      window.requestAnimationFrame(dispatchLayoutEvent)
+    }
+  }
+
+  componentDidMount() {
+    this._onLayout()
+  }
+
+  componentDidUpdate() {
+    this._onLayout()
   }
 
   render() {
