@@ -23,12 +23,12 @@ export default class GridView extends Component {
     ]),
     gutter: PropTypes.string,
     style: PropTypes.object
-  }
+  };
 
   static defaultProps = {
     alley: '0',
     gutter: '0'
-  }
+  };
 
   render() {
     const { alley, children, gutter, style, ...other } = this.props

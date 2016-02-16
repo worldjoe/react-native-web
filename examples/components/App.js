@@ -7,7 +7,7 @@ export default class App extends React.Component {
   static propTypes = {
     mediaQuery: React.PropTypes.object,
     style: View.propTypes.style
-  }
+  };
 
   constructor(...args) {
     super(...args)
@@ -22,7 +22,7 @@ export default class App extends React.Component {
       ...(styles.root.common),
       ...(mediaQuery.small.matches && styles.root.mqSmall),
       ...(mediaQuery.large.matches && styles.root.mqLarge)
-    }
+    };
 
     return (
       <View accessibilityRole='main' style={rootStyles}>
