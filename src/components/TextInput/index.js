@@ -10,6 +10,7 @@ import View from '../View'
 
 const textInputStyleKeys = Object.keys(TextInputStylePropTypes)
 
+/*
 const styles = StyleSheet.create({
   initial: {
     ...View.defaultProps.style,
@@ -38,6 +39,7 @@ const styles = StyleSheet.create({
     whiteSpace: 'pre'
   }
 })
+*/
 
 class TextInput extends React.Component {
   constructor(props, context) {
@@ -79,7 +81,6 @@ class TextInput extends React.Component {
     multiline: false,
     numberOfLines: 2,
     secureTextEntry: false,
-    style: styles.initial
   };
 
   _onBlur(e) {
@@ -178,7 +179,6 @@ class TextInput extends React.Component {
       onFocus: this._onFocus.bind(this),
       onSelect: onSelectionChange && this._onSelectionChange.bind(this),
       readOnly: !editable,
-      style: { ...styles.input, outline: style.outline },
       value
     }
 
@@ -201,10 +201,6 @@ class TextInput extends React.Component {
       <CoreComponent
         accessibilityLabel={accessibilityLabel}
         className='TextInput'
-        style={{
-          ...styles.initial,
-          ...resolvedStyle
-        }}
         testID={testID}
       >
         <View style={{ flexGrow: 1 }}>
@@ -212,7 +208,6 @@ class TextInput extends React.Component {
           {placeholder && this.state.showPlaceholder && <Text
             pointerEvents='none'
             style={{
-              ...styles.placeholder,
               ...(placeholderTextColor && { color: placeholderTextColor })
             }}
           >{placeholder}</Text>}

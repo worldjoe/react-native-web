@@ -1,0 +1,36 @@
+body {
+    background: #ccc;
+    padding: 15px;
+}
+
+body > #fuegoPlayerContainer {
+    background: #fff;
+    position: relative;
+    margin-left: 0;
+    margin-right: 0;
+    padding: 25px 15px;
+}
+
+@media only screen and (min-width: 480px) {
+	body .fuego-primary-viewport {
+		margin-left: 20px;
+		margin-right: 20px;
+	}
+}
+
+@media only screen and (min-width: 768px) {
+	body .fuego-primary-viewport {
+		margin-left: 0;
+		margin-right: 0;
+	}
+
+	body > #fuegoPlayerContainer {
+		margin-left: 20px;
+		margin-right: 20px;
+		padding: 50px 50px 20px;
+	}
+}
+
+#grid {
+    padding: 50px 50px 20px !important;
+}

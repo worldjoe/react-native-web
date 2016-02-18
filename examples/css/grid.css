@@ -1,0 +1,30 @@
+#grid {
+    display: none;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-bottom: 20px
+}
+
+#grid .fuego-container,
+#grid .row,
+#grid .col-xs-1,
+#grid span {
+    display: block;
+    height: 100%;
+}
+
+#grid .col-xs-1 span {
+    background: rgba(155, 220, 240, 0.1);
+}
+
+/* Small Devices, Tablets */
+@media only screen and (min-width: 768px) {
+    #grid {
+        display: block;
+    }
+}
