@@ -36,74 +36,8 @@ export default class App extends React.Component {
 
         <MediaQueryWidget mediaQuery={mediaQuery} />
 
-        <Heading size='large'>Image</Heading>
-        <Image
-          accessibilityLabel='accessible image'
-          children={<Text>Inner content</Text>}
-          defaultSource={{
-            uri: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZAAAAGQCAIAAAAP3aGbAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3wkGESkdPWMDggAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAD5UlEQVR42u3UMQ0AAAgEMcC/x7eCCgaSVsIN10kK4IORADAsAMMCDAvAsAAMCzAsAMMCMCzAsAAMC8CwAMMCMCwAwwIMC8CwAAwLMCwAwwIwLMCwAAwLwLAAwwIwLADDAgwLwLAAwwIwLADDAgwLwLAADAswLADDAjAswLAADAvAsADDAjAsAMMCDAvAsAAMCzAsAMMCMCzAsAAMC8CwAMMCMCwAwwIMC8CwAMMCMCwAwwIMC8CwAAwLMCwAwwIwLMCwAAwLwLAAwwIwLADDAgwLwLAADAswLADDAjAswLAADAvAsADDAjAsAMMCDAvAsADDAjAsAMMCDAvAsAAMCzAsAMMCMCzAsAAMC8CwAMMCMCwAwwIMC8CwAAwLMCwAwwIwLMCwAAwLwLAAwwIwLADDAgwLwLAAwwIwLADDAgwLwLAADAswLADDAjAswLAADAvAsADDAjAsAMMCDAvAsAAMCzAsAMMCMCzAsAAMC8CwAMMCMCwAwwIMC8CwAMMCMCwAwwIMC8CwAAwLMCwAwwIwLMCwAAwLwLAAwwIwLADDAgwLwLAADAswLADDAjAswLAADAvAsADDAjAsAMMCDAvAsADDAjAsAMMCDAvAsAAMCzAsAMMCMCzAsAAMC8CwAMMCMCwAwwIMC8CwAAwLMCwAwwIwLMCwAAwLwLAAwwIwLADDAgwLwLAAwwIwLADDAgwLwLAADAswLADDAjAswLAADAvAsADDAjAsAMMCDAvAsAAMCzAsAMMCMCzAsAAMC8CwAMMCMCwAwwIMC8CwAMMCMCwAwwIMC8CwAAwLMCwAwwIwLMCwAAwLwLAAwwIwLADDAgwLwLAADAswLADDAjAswLAADAvAsADDAjAswLAkAAwLwLAAwwIwLADDAgwLwLAADAswLADDAjAswLAADAvAsADDAjAsAMMCDAvAsAAMCzAsAMMCMCzAsAAMC8CwAMMCMCzAsAAMC8CwAMMCMCwAwwIMC8CwAAwLMCwAwwIwLMCwAAwLwLAAwwIwLADDAgwLwLAADAswLADDAjAswLAADAvAsADDAjAswLAADAvAsADDAjAsAMMCDAvAsAAMCzAsAMMCMCzAsAAMC8CwAMMCMCwAwwIMC8CwAAwLMCwAwwIwLMCwAAwLwLAAwwIwLMCwAAwLwLAAwwIwLADDAgwLwLAADAswLADDAjAswLAADAvAsADDAjAsAMMCDAvAsAAMCzAsAMMCMCzAsAAMC8CwAMMCMCzAsAAMC8CwAMMCMCwAwwIMC8CwAAwLMCwAwwIwLMCwAAwLwLAAwwIwLADDAgwLwLAADAswLADDAjAswLAALi04UQW9HF910gAAAABJRU5ErkJggg=='
-          }}
-          onError={(e) => { console.log('Image.onError', e) }}
-          onLoad={(e) => { console.log('Image.onLoad', e) }}
-          onLoadEnd={() => { console.log('Image.onLoadEnd') }}
-          onLoadStart={() => { console.log('Image.onLoadStart') }}
-          resizeMode={'contain'}
-          source={{
-            height: 400,
-            uri: 'http://facebook.github.io/react/img/logo_og.png',
-            width: 400
-          }}
-          style={{
-            borderWidth: '5px'
-          }}
-          testID='Example.image'
-        />
-
-        <Heading size='large'>Text</Heading>
-        <Text
-          onPress={(e) => { console.log('Text.onPress', e) }}
-          testID={'Example.text'}
-        >
-          PRESS ME.
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vel
-          lectus urna. Aliquam vitae justo porttitor, aliquam erat nec,
-          venenatis diam. Vivamus facilisis augue non urna mattis ultricies.
-            Suspendisse et vulputate enim, a maximus nulla. Vivamus imperdiet
-          hendrerit consequat. Aliquam lorem quam, elementum eget ex nec,
-          ultrices porttitor nibh. Nulla pellentesque urna leo, a aliquet elit
-          rhoncus a. Aenean ultricies, nunc a interdum dictum, dui odio
-          scelerisque mauris, a fringilla elit ligula vel sem. Sed vel aliquet
-          ipsum, sed rhoncus velit. Vivamus commodo pretium libero id placerat.
-        </Text>
-        <Text numberOfLines={1}>
-          TRUNCATED after 1 line.
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vel
-          lectus urna. Aliquam vitae justo porttitor, aliquam erat nec,
-          venenatis diam. Vivamus facilisis augue non urna mattis ultricies.
-          Suspendisse et vulputate enim, a maximus nulla. Vivamus imperdiet
-          hendrerit consequat.
-        </Text>
-
         <Heading size='large'>TextInput</Heading>
         <TextInput
-          keyboardType='default'
-          onBlur={(e) => { console.log('TextInput.onBlur', e) }}
-          onChange={(e) => { console.log('TextInput.onChange', e) }}
-          onChangeText={(e) => { console.log('TextInput.onChangeText', e) }}
-          onFocus={(e) => { console.log('TextInput.onFocus', e) }}
-          onSelectionChange={(e) => { console.log('TextInput.onSelectionChange', e) }}
-        />
-        <TextInput secureTextEntry />
-        <TextInput defaultValue='read only' editable={false} />
-        <TextInput keyboardType='email-address' placeholder='you@domain.com' placeholderTextColor='red' />
-        <TextInput keyboardType='numeric' />
-        <TextInput keyboardType='phone-pad' />
-        <TextInput defaultValue='https://delete-me' keyboardType='url' placeholder='https://www.some-website.com' selectTextOnFocus />
-        <TextInput
-          defaultValue='default value'
-          maxNumberOfLines={10}
-          multiline
-          numberOfLines={5}
         />
 
         <Heading size='large'>Touchable</Heading>
