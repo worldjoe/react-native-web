@@ -18,6 +18,9 @@ export default class App extends React.Component {
 
   render() {
     const { mediaQuery } = this.props
+      const override = {
+      ...(styles.override)
+    }
     const rootStyles = {
       ...(styles.root.common),
       ...(mediaQuery.small.matches && styles.root.mqSmall),
@@ -36,9 +39,11 @@ export default class App extends React.Component {
 
         <MediaQueryWidget mediaQuery={mediaQuery} />
 
-        <Heading size='large'>TextInput</Heading>
-        <TextInput
-        />
+        <Heading size='large'>Attempt at recreating full input from tto</Heading>
+
+        <View>
+          <TextInput style={override}/>
+        </View>
 
         <Heading size='large'>Touchable</Heading>
         <Touchable
@@ -165,7 +170,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     flexGrow: 1,
     justifyContent: 'center',
-    borderWidth: 1
+    borderWidth: 0
   },
   horizontalBox: {
     width: '50px'
@@ -182,7 +187,7 @@ const styles = StyleSheet.create({
   },
   touchableArea: {
     alignItems: 'center',
-    borderWidth: 1,
+    borderWidth: 0,
     height: '200px',
     justifyContent: 'center'
   },
@@ -194,5 +199,8 @@ const styles = StyleSheet.create({
   },
   scrollViewContentContainerStyle: {
     padding: '10px'
+  },
+  override: {
+    borderWidth: 0
   }
 })
