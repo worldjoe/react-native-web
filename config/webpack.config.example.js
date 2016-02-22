@@ -1,9 +1,6 @@
 var constants = require('./constants')
 var webpack = require('webpack')
 
-var sha = exec('git rev-parse --short HEAD').stdout.trim();
-var rootId = 'fp_' + sha;
-
 module.exports = {
   devServer: {
     contentBase: constants.EXAMPLES_DIRECTORY

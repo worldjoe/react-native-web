@@ -18,8 +18,11 @@ export default class App extends React.Component {
 
   render() {
     const { mediaQuery } = this.props
-      const override = {
+    const override = {
       ...(styles.override)
+    }
+    const fuegoPrimaryViewport = {
+      ...(styles.fuegoPrimaryViewport)
     }
     const rootStyles = {
       ...(styles.root.common),
@@ -41,7 +44,7 @@ export default class App extends React.Component {
 
         <Heading size='large'>Attempt at recreating full input from tto</Heading>
 
-        <View>
+        <View style={fuegoPrimaryViewport}>
           <TextInput style={override}/>
         </View>
 
@@ -73,7 +76,7 @@ export default class App extends React.Component {
         </View>
 
         <Heading>Row layout</Heading>
-        <View style={styles.row}>
+        <View ergerg="ergerg" style={styles.row}>
           {[ 1, 2, 3, 4, 5, 6 ].map((item, i) => {
             return (
               <View key={i} style={styles.box}>
@@ -202,5 +205,8 @@ const styles = StyleSheet.create({
   },
   override: {
     borderWidth: 0
+  },
+  fuegoPrimaryViewport: {
+    marginTop: 420
   }
 })
