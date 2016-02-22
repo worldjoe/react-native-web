@@ -21,8 +21,14 @@ export default class App extends React.Component {
     const override = {
       ...(styles.override)
     }
-    const fuegoPrimaryViewport = {
-      ...(styles.fuegoPrimaryViewport)
+    const fuego_input = {
+      ...(styles.fuego_input)
+    }
+    const input_generic = {
+      ...(styles.input_generic)
+    }
+    const form_control = {
+      ...(styles.form_control)
     }
     const rootStyles = {
       ...(styles.root.common),
@@ -44,8 +50,12 @@ export default class App extends React.Component {
 
         <Heading size='large'>Attempt at recreating full input from tto</Heading>
 
-        <View style={fuegoPrimaryViewport}>
-          <TextInput style={override}/>
+        <View style={override}>
+          <TextInput style={{
+           ...override,
+           ...fuego_input,
+           ...input_generic,
+           ...form_control}}/>
         </View>
 
         <Heading size='large'>Touchable</Heading>
@@ -206,7 +216,34 @@ const styles = StyleSheet.create({
   override: {
     borderWidth: 0
   },
-  fuegoPrimaryViewport: {
-    marginTop: 420
+  fuego_input: {
+    position: 'relative',
+    marginBottom: '30px'
+  },
+  input_generic: {
+    height: 'auto',
+    padding: '0',
+    paddingBottom: '10px',
+    borderWidth: '0',
+    borderBottomWidth: '1px',
+    marginBottom: '1px',
+    backgroundColor: '#333333',
+    fontSize: '1.6rem',
+    lineHeight: '2.0rem',
+    fontWeight: '200',
+    fontStyle: 'normal',
+    fontFamily: "Avenir light, Avenir"
+  },
+  form_control: {
+    display: 'block',
+    width: '100%',
+    height: '34px',
+    backgroundColor: '#ffffff',
+    borderWidth: '1px',
+    borderStyle: 'solid',
+    borderColor: '#cccccc',
+    borderRadius: '4px',
+    fontSize: '14px',
+    lineHeight: '1.428571429',
   }
 })
