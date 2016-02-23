@@ -30,6 +30,18 @@ export default class App extends React.Component {
     const form_control = {
       ...(styles.form_control)
     }
+    const fuego_title = {
+      ...(styles.fuego_title)
+    }
+    const fuego_title_text = {
+      ...(styles.fuego_title_text)
+    }
+    const fuego_text = {
+      ...(styles.fuego_text)
+    }
+    const fuego_label = {
+      ...(styles.fuego_label)
+    }
     const rootStyles = {
       ...(styles.root.common),
       ...(mediaQuery.small.matches && styles.root.mqSmall),
@@ -37,126 +49,52 @@ export default class App extends React.Component {
     };
 
     return (
-      <View accessibilityRole='main' style={rootStyles}>
-        <Heading size='xlarge'>React Native for Web</Heading>
-        <Text>React Native Web takes the core components from <Text
-        accessibilityRole='link' href='https://facebook.github.io/react-native/'>React
-        Native</Text> and brings them to the web. These components provide
-        simple building blocks – touch handling, flexbox layout,
-        scroll views – from which more complex components and apps can be
-        constructed.</Text>
+      <View accessibilityRole='main' style={styles.container}>
 
-        <MediaQueryWidget mediaQuery={mediaQuery} />
+        <Text size='xlarge' style={{
+        ...fuego_title,
+        ...fuego_title_text
+        }}>Mock with test assets</Text>
 
-        <Heading size='large'>Attempt at recreating full input from tto</Heading>
-
-        <View style={override}>
-          <TextInput style={{
-           ...override,
-           ...fuego_input,
-           ...input_generic,
-           ...form_control}}/>
+        <View  style={fuego_text}>
+          <Text>This is a mock in React Native Web which contains all the assets we want to test cross browser</Text>
         </View>
 
-        <Heading size='large'>Touchable</Heading>
-        <Touchable
-          accessibilityLabel={'Touchable element'}
-          activeHighlight='lightblue'
-          activeOpacity={0.8}
-          onLongPress={(e) => { console.log('Touchable.onLongPress', e) }}
-          onPress={(e) => { console.log('Touchable.onPress', e) }}
-          onPressIn={(e) => { console.log('Touchable.onPressIn', e) }}
-          onPressOut={(e) => { console.log('Touchable.onPressOut', e) }}
-        >
-          <View style={styles.touchableArea}>
-            <Text>Touchable area (press, long press)</Text>
-          </View>
-        </Touchable>
-
-        <Heading size='large'>View</Heading>
-        <Heading>Default layout</Heading>
         <View>
-          {[ 1, 2, 3, 4, 5, 6 ].map((item, i) => {
-            return (
-              <View key={i} style={styles.box}>
-                <Text>{item}</Text>
-              </View>
-            )
-          })}
-        </View>
 
-        <Heading>Row layout</Heading>
-        <View ergerg="ergerg" style={styles.row}>
-          {[ 1, 2, 3, 4, 5, 6 ].map((item, i) => {
-            return (
-              <View key={i} style={styles.box}>
-                <Text>{item}</Text>
-              </View>
-            )
-          })}
-        </View>
+          <View>
+            <Text style={{
+            ...fuego_text,
+            marginBottom: '10px'
+            }}>I am a multiinput's label</Text>
+          </View>
 
-        <Heading>pointerEvents</Heading>
-        <GridView alley='10px'>
-          {['box-none', 'box-only', 'none'].map((value, i) => {
-            return (
-              <View
-                accessibilityRole='link'
-                children={value}
-                href='https://google.com'
-                key={i}
-                pointerEvents={value}
-                style={styles.pointerEventsBox}
-              />
-            )
-          })}
-        </GridView>
+          <View>
+            <Text style = {styles.fuego_note}>I am a note on a multiinput</Text>
+          </View>
 
-        <Heading size='large'>ScrollView</Heading>
-        <label>
-          <input
-            checked={this.state.scrollEnabled}
-            onChange={() => this.setState({
-              scrollEnabled: !this.state.scrollEnabled
-            })}
-            type='checkbox'
-          /> Enable scroll
-        </label>
+          <View>
+            <View style={override}>
+              <Text style={fuego_label}>Field Label</Text>
+              <TextInput style={{
+              ...override,
+              ...fuego_input,
+              ...input_generic,
+              ...form_control}}/>
+            </View>
 
-        <Heading>Default layout</Heading>
-        <View style={styles.scrollViewContainer}>
-          <ScrollView
-            contentContainerStyle={styles.scrollViewContentContainerStyle}
-            onScroll={e => console.log('ScrollView.onScroll', e)}
-            scrollEnabled={this.state.scrollEnabled}
-            scrollEventThrottle={1} // 1 event per second
-            style={styles.scrollViewStyle}
-          >
-            {Array.from({ length: 50 }).map((item, i) => (
-              <View key={i} style={styles.box}>
-                <Text>{i}</Text>
-              </View>
-            ))}
-          </ScrollView>
-        </View>
+            <View style={override}>
+              <Text style={fuego_label}>Another Field Label</Text>
+              <TextInput style={{
+              ...override,
+              ...fuego_input,
+              ...input_generic,
+              ...form_control}}/>
+            </View>
+          </View>
 
-        <Heading>Horizontal layout</Heading>
-        <View style={styles.scrollViewContainer}>
-          <ScrollView
-            contentContainerStyle={styles.scrollViewContentContainerStyle}
-            horizontal
-            onScroll={e => console.log('ScrollView.onScroll', e)}
-            scrollEnabled={this.state.scrollEnabled}
-            scrollEventThrottle={1} // 1 event per second
-            style={styles.scrollViewStyle}
-          >
-            {Array.from({ length: 50 }).map((item, i) => (
-              <View key={i} style={{...styles.box, ...styles.horizontalBox}}>
-                <Text>{i}</Text>
-              </View>
-            ))}
-          </ScrollView>
-        </View>
+        <Text>Here's a footer to show spacing</Text>
+      </View>
       </View>
     )
   }
@@ -180,10 +118,20 @@ const styles = StyleSheet.create({
     flexWrap: 'wrap'
   },
   box: {
-    alignItems: 'center',
+    alignItems: 'left',
     flexGrow: 1,
-    justifyContent: 'center',
-    borderWidth: 0
+    justifyContent: 'left',
+    borderWidth: 0,
+    backgroundColor: '#ffffff'
+  },
+  container: {
+    alignItems: 'left',
+    flexGrow: 1,
+    justifyContent: 'left',
+    borderWidth: 0,
+    backgroundColor: '#ffffff',
+    width: '1756px',
+    height: '845px'
   },
   horizontalBox: {
     width: '50px'
@@ -245,5 +193,42 @@ const styles = StyleSheet.create({
     borderRadius: '4px',
     fontSize: '14px',
     lineHeight: '1.428571429',
+  },
+  fuego_title: {
+    display: 'block',
+    marginLeft: '-15px',
+    marginRight: '-15px',
+    textAlign: 'left'
+  },
+  fuego_title_text: {
+    marginBottom: '30px',
+    paddingLeft: '15px',
+    paddingRight: '15px',
+    color: '#0082C3',
+    fontFamily: 'Avenir Light, Avenir',
+    fontSize: '30px',
+    fontStyle: 'normal',
+    fontWeight: '200px',
+    lineHeight: '36px',
+    position: 'relative',
+    textAlign: 'left'
+  },
+  fuego_text: {
+    paddingRight: '15px',
+    marginBottom: '20px',
+    position: 'relative'
+  },
+  fuego_note: {
+    display: 'inline',
+    fontFamily: 'Avenir roman, Avenir, Helvetica, Arial',
+    fontSize: '14px',
+    fontStyle: 'italic',
+    lineHeight: '18px'
+  },
+  fuego_label: {
+    display: 'inline',
+    fontFamily: 'Avenir light, Avenir, Helvetica, Arial',
+    fontSize: '14px',
+    lineHeight: '18px'
   }
 })
