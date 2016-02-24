@@ -118,16 +118,16 @@ const styles = StyleSheet.create({
     flexWrap: 'wrap'
   },
   box: {
-    alignItems: 'left',
+    alignItems: 'flex-start',
     flexGrow: 1,
-    justifyContent: 'left',
+    justifyContent: 'flex-start',
     borderWidth: 0,
     backgroundColor: '#ffffff'
   },
   container: {
-    alignItems: 'left',
+    alignItems: 'flex-start',
     flexGrow: 1,
-    justifyContent: 'left',
+    justifyContent: 'flex-start',
     borderWidth: 0,
     backgroundColor: '#ffffff',
     width: '1756px',
@@ -205,7 +205,7 @@ const styles = StyleSheet.create({
     paddingLeft: '15px',
     paddingRight: '15px',
     color: '#0082C3',
-    fontFamily: 'Avenir Light, Avenir',
+    fontFamily: 'Avenir Light, Avenir, Helvetica, Arial',
     fontSize: '30px',
     fontStyle: 'normal',
     fontWeight: '200px',
@@ -230,5 +230,6 @@ const styles = StyleSheet.create({
     fontFamily: 'Avenir light, Avenir, Helvetica, Arial',
     fontSize: '14px',
     lineHeight: '18px'
+
   }
 })

@@ -9,7 +9,7 @@
   "scripts": {
     "build": "rm -rf ./dist && mkdir dist && babel src -d dist --ignore **/__tests__,src/modules/specHelpers",
     "build:umd": "webpack --config config/webpack.config.js --sort-assets-by --progress",
-    "examples": "webpack-dev-server --config config/webpack.config.example.js --inline --hot --colors --quiet --host 172.29.32.169",
+    "examples": "webpack-dev-server --config config/webpack.config.example.js --inline --hot --colors --quiet --host 172.18.43.32",
     "lint": "eslint config examples src",
     "prepublish": "npm run build && npm run build:umd",
     "test": "npm run lint && npm run test:unit",
